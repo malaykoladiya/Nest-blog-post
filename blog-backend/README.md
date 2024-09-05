@@ -82,14 +82,6 @@ Use npm to install the required dependencies:
 npm install
 ```
 
-### 3. Install MongoDB and Mongoose
-
-You’ll also need MongoDB and Mongoose. Install them using npm:
-
-```bash
-npm install --save @nestjs/mongoose mongoose
-```
-
 ## Running the Application
 
 ### 1. Start MongoDB
@@ -108,7 +100,7 @@ To start the Nest.js application, use the following command:
 npm run start
 ```
 
-The server will start on `http://localhost:3000`. You can access the REST API using tools like Postman or through your Vue.js frontend (which you’ll build separately).
+The server will start on `http://localhost:3000`. You can access the REST API using tools like Postman or through your frontend.
 
 ## API Endpoints
 
@@ -130,9 +122,9 @@ To create a new post, send a `POST` request to `/blog/post` with the following J
 {
   "title": "My First Blog Post",
   "description": "An intro to my new blog post.",
-  "body": "This is the full content of the blog post.",
+  "bodyDetail": "This is the full content of the blog post.",
   "author": "Author Name",
-  "date_posted": "2024-09-05"
+  "datePosted": "2024-09-05"
 }
 ```
 
@@ -160,7 +152,3 @@ You can replace the connection string with your MongoDB URI if you are using a c
 - Implement pagination for fetching blog posts.
 - Add image upload functionality for blog posts.
 - Add unit and integration tests for controllers and services.
-
-```
-
-```
