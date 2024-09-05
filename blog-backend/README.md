@@ -35,7 +35,6 @@ This is the backend for a simple blog application built using Nest.js and MongoD
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
 - [Database Configuration](#database-configuration)
-- [Project Structure](#project-structure)
 - [Future Improvements](#future-improvements)
 
 ## Introduction
@@ -73,4 +72,95 @@ To run this project, ensure you have the following installed:
 ```bash
 git clone https://github.com/yourusername/blog-backend.git
 cd blog-backend
+```
+
+### 2. Install Dependencies
+
+Use npm to install the required dependencies:
+
+```bash
+npm install
+```
+
+### 3. Install MongoDB and Mongoose
+
+You’ll also need MongoDB and Mongoose. Install them using npm:
+
+```bash
+npm install --save @nestjs/mongoose mongoose
+```
+
+## Running the Application
+
+### 1. Start MongoDB
+
+Ensure MongoDB is running on your machine. You can start MongoDB with the following command (in a separate terminal window):
+
+```bash
+sudo mongod
+```
+
+### 2. Start the Application
+
+To start the Nest.js application, use the following command:
+
+```bash
+npm run start
+```
+
+The server will start on `http://localhost:3000`. You can access the REST API using tools like Postman or through your Vue.js frontend (which you’ll build separately).
+
+## API Endpoints
+
+The following endpoints are available to interact with the blog posts:
+
+| HTTP Method | Endpoint                 | Description                   |
+| ----------- | ------------------------ | ----------------------------- |
+| `GET`       | `/blog/posts`            | Fetch all blog posts          |
+| `GET`       | `/blog/post/:postID`     | Fetch a single post by its ID |
+| `POST`      | `/blog/post`             | Create a new post             |
+| `PUT`       | `/blog/edit?postID=ID`   | Edit an existing post ß       |
+| `DELETE`    | `/blog/delete?postID=ID` | Delete a post by its ID ß     |
+
+### Example: Creating a New Post
+
+To create a new post, send a `POST` request to `/blog/post` with the following JSON structure:
+
+```json
+{
+  "title": "My First Blog Post",
+  "description": "An intro to my new blog post.",
+  "body": "This is the full content of the blog post.",
+  "author": "Author Name",
+  "date_posted": "2024-09-05"
+}
+```
+
+## Database Configuration
+
+By default, the application connects to a MongoDB instance running locally at:
+
+```
+mongodb://localhost/nest-blog
+```
+
+If you want to change the MongoDB connection URL, navigate to the `app.module.ts` file and update the connection string:
+
+```typescript
+MongooseModule.forRoot('mongodb://localhost/nest-blog', {
+  useNewUrlParser: true,
+});
+```
+
+You can replace the connection string with your MongoDB URI if you are using a cloud database like MongoDB Atlas.
+
+## Future Improvements
+
+- Add user authentication (e.g., JWT-based authentication).
+- Implement pagination for fetching blog posts.
+- Add image upload functionality for blog posts.
+- Add unit and integration tests for controllers and services.
+
+```
+
 ```
