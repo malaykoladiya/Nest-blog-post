@@ -111,8 +111,8 @@ The following endpoints are available to interact with the blog posts:
 | `GET`       | `/blog/posts`            | Fetch all blog posts          |
 | `GET`       | `/blog/post/:postID`     | Fetch a single post by its ID |
 | `POST`      | `/blog/post`             | Create a new post             |
-| `PUT`       | `/blog/edit?postID=ID`   | Edit an existing post ß       |
-| `DELETE`    | `/blog/delete?postID=ID` | Delete a post by its ID ß     |
+| `PUT`       | `/blog/edit?postID=ID`   | Edit an existing post         |
+| `DELETE`    | `/blog/delete?postID=ID` | Delete a post by its ID       |
 
 ### Example: Creating a New Post
 
